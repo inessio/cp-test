@@ -15,63 +15,35 @@ import ShareOutlinedIcon from '@material-ui/icons/ShareOutlined';
 import UndoIcon from '@material-ui/icons/Undo';
 import RedoIcon from '@material-ui/icons/Redo';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
+import ReplyRoundedIcon from '@material-ui/icons/ReplyRounded';
 
-const drawerWidth = 72;
-
+const drawerWidth = 70;
 const useStyles = makeStyles((theme) => ({
     root: {
       display: 'flex',
-    },
-    
+    },  
     appBar: {
-      zIndex: theme.zIndex.drawer + 1,
-      transition: theme.transitions.create(['width', 'margin'], {
-        easing: theme.transitions.easing.sharp,
-        duration: theme.transitions.duration.leavingScreen,
-      }),
-    },
-
-    appBarShift: {
-      marginLeft: drawerWidth,
-      width: `calc(100% - ${drawerWidth}px)`,
-      marginTop:10,
-      maxHeight:150,
-      transition: theme.transitions.create(['width', 'margin'], {
-        easing: theme.transitions.easing.sharp,
-        duration: theme.transitions.duration.enteringScreen,
-      }),
-    },
- 
+        width: `calc(100% - ${drawerWidth}px)`,
+        marginLeft: drawerWidth,
+      },
     title: {
       flexGrow: 1,
     },
-    appBarSpacer: theme.mixins.toolbar,
-    content: {
-      flexGrow: 1,
-      height: '100vh',
-      overflow: 'auto',
-    },
-
-    customBorder: {
-        height: 30,
-        float: 'top',
-        textAlign: 'center',
-        paddingBottom: 55
-    },
-    customFlow : {
-        border:'solid 4 red' 
+    buttonStyle:{
+        paddingLeft:'30px',
+        paddingRight:'30px',
+        paddingTop:'8px',
+        paddingBottom:'8px'
     }
    
   }));
 
 const NavTop = () => {
     const classes = useStyles();
-    // const [open, setOpen] = React.useState(true);
-
     return (
-        <AppBar position="absolute" color="inherit" className={clsx(classes.appBar && classes.appBarShift)}>
-            {/* <Paper className={classes.customBorder}>
-            <Toolbar className={classes.toolbar}>
+        <AppBar position="fixed" color="inherit" className={classes.appBar}>
+            <Paper>
+            <Toolbar>
                 <Typography component="h5" variant="h6" color="inherit" noWrap className={classes.title}>
             
                 </Typography>
@@ -81,7 +53,7 @@ const NavTop = () => {
                     </Badge>
                 </IconButton>
                 <IconButton color="inherit">
-                    <Badge badgeContent={4} color="secondary">
+                    <Badge badgeContent={4} color="danger">
                     <NotificationsIcon />
                     </Badge>
                 </IconButton>
@@ -92,12 +64,17 @@ const NavTop = () => {
                     </Badge>
                 </IconButton>
                 </Toolbar>
-            </Paper> */}
+            </Paper>
 
             <Paper>
             <Toolbar className={classes.toolbar}>
+            <IconButton color="inherit">
+                    <Badge  color="inherit">
+                    <ReplyRoundedIcon />
+                    </Badge>
+                </IconButton>
                 <Typography component="h5" variant="h6" color="inherit" noWrap className={classes.title}>
-                {/* hello world */}
+                Invoice
                 </Typography>
                 <IconButton color="inherit">
                     <Badge  color="inherit">
@@ -123,7 +100,7 @@ const NavTop = () => {
                 <IconButton color="inherit">
                     <Badge color="inherit">
                     
-                    <Button variant="contained" color="primary">
+                    <Button variant="contained" color="primary"  size='large' >
                         Preview
                     </Button>
                     </Badge>

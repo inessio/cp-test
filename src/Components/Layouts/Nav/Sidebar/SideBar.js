@@ -8,76 +8,90 @@ import Typography from '@material-ui/core/Typography';
 import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
 import IconButton from '@material-ui/core/IconButton';
+import ListItem from '@material-ui/core/ListItem';
+import HomeRoundedIcon from '@material-ui/icons/HomeRounded';
+import DesktopWindowsRoundedIcon from '@material-ui/icons/DesktopWindowsRounded';
+import EditRoundedIcon from '@material-ui/icons/EditRounded';
+import PaletteOutlinedIcon from '@material-ui/icons/PaletteOutlined';
+import PowerOutlinedIcon from '@material-ui/icons/PowerOutlined';
+import StorageRoundedIcon from '@material-ui/icons/StorageRounded';
+import AccountTreeRoundedIcon from '@material-ui/icons/AccountTreeRounded';
 
-const drawerWidth = 50;
+const drawerWidth = 80;
+const db = "";
 const useStyles = makeStyles((theme) => ({
     root: {
       display: 'flex',
     },
-    toolbar: {
-      paddingRight: 24, // keep right padding when drawer closed
+    appBar: {
+      width: `calc(100% - ${drawerWidth}px)`,
+      marginLeft: drawerWidth,
     },
-    toolbarIcon: {
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'flex-end',
-      padding: '0 8px',
-      ...theme.mixins.toolbar,
-    },
-    menuButton: {
-      marginRight: 36,
-    },
-    menuButtonHidden: {
-      display: 'none',
-    },
-    title: {
-      flexGrow: 1,
+    drawer: {
+      width: drawerWidth,
+      flexShrink: 0,
+      textAlign:"center",
     },
     drawerPaper: {
-      position: 'relative',
-      whiteSpace: 'nowrap',
       width: drawerWidth,
-      transition: theme.transitions.create('width', {
-        easing: theme.transitions.easing.sharp,
-        duration: theme.transitions.duration.enteringScreen,
-      }),
+      background:'#020b40'
+      
     },
-    appBarSpacer: theme.mixins.toolbar,
+    toolbar: theme.mixins.toolbar,
     content: {
       flexGrow: 1,
-      height: '100vh',
-      overflow: 'auto',
+      backgroundColor: theme.palette.background.default,
+      padding: theme.spacing(3),
     },
-    container: {
-      paddingTop: theme.spacing(4),
-      paddingBottom: theme.spacing(4),
+    icons:{
+      textAlign:"center",
+      fontSize: 35,
+      paddingLeft: '10px',
+      color: 'white'
+          
     },
-    paper: {
-      padding: theme.spacing(2),
-      display: 'flex',
-      overflow: 'auto',
-      flexDirection: 'column',
-    },
-    fixedHeight: {
-      height: 240,
-    },
+   
   }));
 
-const SideBar = (props) => {
+const SideBar = () => {
     const classes = useStyles();
+
     return (
-        <Drawer
-            variant="permanent"
-            classes={{
-                paper: clsx(classes.drawerPaper && classes.drawerPaperClose),
-            }}
-            // open={open}
-        >
-           
-            
-            <List>{NavLi}</List>
-            {/* <Divider />
-            <List>{secondaryListItems}</List> */}
+      <Drawer 
+          className={classes.drawer}
+          variant="permanent"
+          classes={{
+            paper: classes.drawerPaper,
+          }}
+          anchor="left"
+      > 
+      <br></br>
+      <List  position="center">
+          <ListItem button>
+            <HomeRoundedIcon className={classes.icons}/>
+          </ListItem>
+      </List>
+      <div className={classes.toolbar} />
+        <List >
+          <ListItem button >
+            <EditRoundedIcon className={classes.icons}/>
+          </ListItem>
+          <ListItem button  >
+            <DesktopWindowsRoundedIcon className={classes.icons}/>       
+          </ListItem>
+          <ListItem button >
+            <PaletteOutlinedIcon className={classes.icons}/>
+          </ListItem>
+          <ListItem button >
+            <AccountTreeRoundedIcon className={classes.icons}/>
+          </ListItem>
+          <ListItem button >
+            <StorageRoundedIcon className={classes.icons} />
+          </ListItem>
+          <ListItem button >
+            <PowerOutlinedIcon className={classes.icons}/>
+          </ListItem>
+        </List>  
       </Drawer>
     );
 }
