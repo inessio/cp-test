@@ -13,10 +13,6 @@ const theme = createMuiTheme({
     secondary: {
       main : 'rgb(26,35,83)',
     },
-    danger:{
-      main: '#FF0000'
-    }
-    // #020b40
   },
   typography: {
     "fontFamily": `"Jost", "Helvetica", "Arial", sans-serif`,
