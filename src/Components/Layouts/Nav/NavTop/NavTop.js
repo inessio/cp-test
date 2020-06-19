@@ -16,11 +16,9 @@ import UndoIcon from '@material-ui/icons/Undo';
 import RedoIcon from '@material-ui/icons/Redo';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import ReplyRoundedIcon from '@material-ui/icons/ReplyRounded';
-import { Link } from '@material-ui/core';
-import Container from '@material-ui/core/Container';
-import { borderRight } from '@material-ui/system';
 
-const drawerWidth = 70;
+
+const drawerWidth = 80;
 const useStyles = makeStyles((theme) => ({
     root: {
       display: 'flex',
@@ -32,6 +30,14 @@ const useStyles = makeStyles((theme) => ({
         width: `calc(100% - ${drawerWidth}px)`,
         marginLeft: drawerWidth,
       },
+    // appBarShift: {
+    // marginLeft: drawerWidth,
+    // width: `calc(100% - ${drawerWidth}px)`,
+    // transition: theme.transitions.create(['width', 'margin'], {
+    //     easing: theme.transitions.easing.sharp,
+    //     duration: theme.transitions.duration.enteringScreen,
+    // }),
+    // }, 
     title: {
       flexGrow: 1,
     },
@@ -44,11 +50,9 @@ const useStyles = makeStyles((theme) => ({
     toolbar: theme.mixins.toolbar,
     buttonStyle:{
         paddingLeft:'30px',
-        paddingRight:'30px',
-       
+        paddingRight:'30px',   
     },
     topStyle: {
-        // fontSize:'89px',
         height:'10px'
     },
     topLink: {
@@ -56,13 +60,25 @@ const useStyles = makeStyles((theme) => ({
     },
   }));
 
-const NavTop = () => {
+const NavTop = (props) => {
     const classes = useStyles();
     return (
-        <AppBar position="fixed" elevation="1" color="inherit" className={classes.appBar} style={{marginTop:'10px'}}>
-            <Paper elevation="5">
+        <AppBar 
+        position="fixed" 
+        elevation={1} 
+        color="inherit" 
+        className={classes.appBar} 
+        style={{marginTop:'10px'}}
+        >
+            <Paper elevation={5}>
                <Toolbar variant="dense" className={classes.topStyle}>
-                <Typography component="h5" variant="h6" style={{textAlign:"center"}} noWrap className={classes.topText}>
+                <Typography 
+                component="h5" 
+                variant="h6" 
+                style={{textAlign:"center"}} 
+                noWrap 
+                className={classes.topText}
+                >
                     You are offline. There are changes yet to be saved
                 </Typography>
                 <Typography className={classes.topLink}>       
@@ -105,7 +121,13 @@ const NavTop = () => {
                     <ReplyRoundedIcon />
                     </Badge>
                 </IconButton>
-                <Typography component="h5" variant="h6" color="inherit" noWrap className={classes.title}>
+                <Typography 
+                component="h5" 
+                variant="h6" 
+                color="inherit" 
+                noWrap 
+                className={classes.title}
+                >
                 Invoice
                 </Typography>
                 <IconButton color="secondary">

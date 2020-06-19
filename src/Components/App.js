@@ -9,6 +9,7 @@ import Paper from '@material-ui/core/Paper';
 import Footer from './Layouts/Footer/Footer';
 import NavTop from './Layouts/Nav/NavTop/NavTop';
 import SideBar from './Layouts/Nav/Sidebar/SideBar';
+import RightBar from './Layouts/Nav/RightBar';
 
 const drawerWidth = 240;
 
@@ -77,8 +78,10 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
     height: '100vh',
     overflow: 'auto',
+    margingTop:400,
   },
   container: {
+   
     paddingTop: theme.spacing(4),
     paddingBottom: theme.spacing(4),
   },
@@ -89,7 +92,7 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: 'column',
   },
   fixedHeight: {
-    height: 240,
+    // height: '100vh',
   },
 }));
 
@@ -103,11 +106,14 @@ export default function Dashboard() {
       <CssBaseline />
       <NavTop />
       <SideBar />
+      
       <main className={classes.content}>
         <div className={classes.appBarSpacer} />
-        {/* <Container maxWidth="lg" className={classes.container}>
+       
+         <Container maxWidth="lg" className={classes.container}> 
+         
           <Grid container spacing={3}>
-            <Grid item xs={12} md={8} lg={9}>
+            {/* <Grid item xs={12} md={8} lg={9}>
               <Paper className={fixedHeightPaper}>
               </Paper>
             </Grid>
@@ -118,13 +124,24 @@ export default function Dashboard() {
             <Grid item xs={12}>
               <Paper className={classes.paper}>
               </Paper>
-            </Grid>
+            </Grid> */}
           </Grid>
-          <Box pt={4}>
-            <Footer />
-          </Box>
-        </Container> */}
+
+           
+           {/* <Box pt={4}>
+            
+
+           
+          </Box> */}
+        </Container> 
+       
+       
       </main>
+      <Footer />
+      <RightBar />
+     
+     
+      
     </div>
   );
 }

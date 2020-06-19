@@ -11,8 +11,11 @@ const theme = createMuiTheme({
       main:'#020b40'
     },
     secondary: {
-      main : 'rgb(26,35,83)',
+      main:'rgb(26,35,83)',
     },
+    info:{
+      main:'rgb(67,72,113)',
+    }
   },
   typography: {
     "fontFamily": `"Jost", "Helvetica", "Arial", sans-serif`,
@@ -27,8 +30,7 @@ ReactDOM.render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
       <App />
-    </ThemeProvider>
-    
+    </ThemeProvider>  
   </React.StrictMode>,
   document.getElementById('root')
 );
