@@ -20,8 +20,14 @@ const useStyle = makeStyles((theme) => ({
         textAlign:'right',
         float:'right',
         flexGrow: 1,
+        paddingLeft:theme.spacing(100)
         
+    },
+    button:{
+        border:'solid 1px rgb(189,194,203)', 
+        textAlign:'right',margin:2
     }
+
 }));
 
 const Footer = () => {
@@ -33,8 +39,8 @@ const Footer = () => {
             position="fixed" 
             className={classes.appBar} 
             >
-                <BottomNavigationAction label="Recents" value="recents" label="Reset Zoom"  showLabel style={{border:'solid 1px black', textAlign:'right',margin:2}}/>
-                <BottomNavigationAction label="Recents" value="recent" label="+   100%    -"  showLabel style={{border:'solid 1px black', textAlign:'right'}}/>
+                <BottomNavigationAction label="Recents" value="recents" label="Reset Zoom"  showLabel className={classes.button} />
+                <BottomNavigationAction label="Recents" value="recent" label="100%"  showLabel  className={classes.button} />
 
             {/* <Button>
 

@@ -2,7 +2,7 @@ import React from 'react';
 import { render,unmountComponentAtNode } from '@testing-library/react';
 import { act } from "react-dom/test-utils";
 
-import NavTop from './NavTop';
+import RightBar from './RightBar';
 
 let container = null;
 beforeEach(() => {
@@ -20,7 +20,7 @@ afterEach(() => {
 
 test('renders  without crashing', () => {
   act(() => {
-    render(<NavTop />, container);
+    render(<RightBar />, container);
   });
-  expect(container.textContent).toBe("Admin Setting");
+  expect(container.textContent).toBe("Item Info");
 });

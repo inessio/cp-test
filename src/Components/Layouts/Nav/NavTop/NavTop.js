@@ -1,5 +1,4 @@
 import React from 'react';
-import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Typography from '@material-ui/core/Typography';
@@ -29,15 +28,7 @@ const useStyles = makeStyles((theme) => ({
     appBar: {
         width: `calc(100% - ${drawerWidth}px)`,
         marginLeft: drawerWidth,
-      },
-    // appBarShift: {
-    // marginLeft: drawerWidth,
-    // width: `calc(100% - ${drawerWidth}px)`,
-    // transition: theme.transitions.create(['width', 'margin'], {
-    //     easing: theme.transitions.easing.sharp,
-    //     duration: theme.transitions.duration.enteringScreen,
-    // }),
-    // }, 
+      }, 
     title: {
       flexGrow: 1,
     },
@@ -60,7 +51,7 @@ const useStyles = makeStyles((theme) => ({
     },
   }));
 
-const NavTop = (props) => {
+const NavTop = () => {
     const classes = useStyles();
     return (
         <AppBar 
@@ -159,9 +150,7 @@ const NavTop = (props) => {
                     </Button>
                     </Badge>
                 </IconButton>
-                </Toolbar>
-           
-           
+                </Toolbar>     
         </AppBar>
     );
 }
