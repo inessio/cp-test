@@ -263,7 +263,7 @@ const useStyles = makeStyles((theme) => ({
                 // label="Select"
                 // value={currency}
                 // onChange={handleChange}
-                helperText="Please select your currency"
+                helperText=""
                 variant="outlined"
                 >
                   
